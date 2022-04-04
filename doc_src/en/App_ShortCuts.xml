@@ -943,14 +943,17 @@
           <colspec align="center" colname="3" colnum="3"/>
           <colspec align="center" colname="4" colnum="4"/>
 
-          <thead>
-            <row>
-              <entry>Menu item</entry>
-              <entry>Function code</entry>
-              <entry>Windows/Linux</entry>
-              <entry>macOS</entry>
-            </row>
-          </thead>
+        <colspec align="left" colname="3" colnum="3"/>
+
+        <thead>
+          <row>
+            <entry>Menu Item</entry>
+
+            <entry>Default shortcut</entry>
+
+            <entry>Menu Item Code</entry>
+          </row>
+        </thead>
 
           <tbody>
             <row>

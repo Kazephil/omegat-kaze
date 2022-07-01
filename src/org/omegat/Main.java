@@ -117,6 +117,9 @@ public final class Main {
     /** Project location for load on startup. */
     protected static File projectLocation = null;
 
+    /** Determine whether to load the most recent project */
+    protected static boolean loadLastProject = false;
+
     /** Remote project location. */
     protected static String remoteProject = null;
 
@@ -148,6 +151,7 @@ public final class Main {
         if (projectDir != null) {
             projectLocation = new File(FileUtil.expandTildeHomeDir(projectDir));
         }
+        loadLastProject = PARAMS.containsKey(CLIParameters.LAST_PROJECT);
         remoteProject = PARAMS.get(CLIParameters.REMOTE_PROJECT);
 
         applyConfigFile(PARAMS.get(CLIParameters.CONFIG_FILE));
@@ -258,7 +262,7 @@ public final class Main {
      * any use of {@link Log#log}, thus it logs to {@link System#out}.
      *
      * @param path
-     *            to config file
+     *             to config file
      */
     private static void applyConfigFile(String path) {
         if (path == null) {
@@ -300,7 +304,8 @@ public final class Main {
      */
     protected static int runGUI() {
         ClassLoader cl = ClassLoader.getSystemClassLoader();
-        MainClassLoader mainClassLoader = (cl instanceof MainClassLoader) ? (MainClassLoader) cl : new MainClassLoader(cl);
+        MainClassLoader mainClassLoader = (cl instanceof MainClassLoader) ? (MainClassLoader) cl
+                : new MainClassLoader(cl);
         PluginUtils.getThemePluginJars().forEach(mainClassLoader::add);
         UIManager.put("ClassLoader", mainClassLoader);
 
@@ -348,7 +353,9 @@ public final class Main {
             // call all application startup listeners for initialize UI
             Core.getMainWindow().getApplicationFrame().setVisible(true);
 
-            if (remoteProject != null) {
+            if (loadLastProject == true) {
+                ProjectUICommands.projectLast();
+            } else if (remoteProject != null) {
                 ProjectUICommands.projectRemote(remoteProject);
             } else if (projectLocation != null) {
                 ProjectUICommands.projectOpen(projectLocation);
@@ -468,26 +475,26 @@ public final class Main {
         List<ErrorReport> stes;
 
         switch (mode) {
-        case ABORT:
-            System.out.println(OStrings.getString("CONSOLE_VALIDATING_TAGS"));
-            stes = Core.getTagValidation().listInvalidTags();
-            if (!stes.isEmpty()) {
-                Core.getTagValidation().logTagValidationErrors(stes);
-                System.out.println(OStrings.getString("CONSOLE_TAGVALIDATION_FAIL"));
-                System.out.println(OStrings.getString("CONSOLE_TAGVALIDATION_ABORT"));
-                System.exit(1);
-            }
-            break;
-        case WARN:
-            System.out.println(OStrings.getString("CONSOLE_VALIDATING_TAGS"));
-            stes = Core.getTagValidation().listInvalidTags();
-            if (!stes.isEmpty()) {
-                Core.getTagValidation().logTagValidationErrors(stes);
-                System.out.println(OStrings.getString("CONSOLE_TAGVALIDATION_FAIL"));
-            }
-            break;
-        default:
-            //do not validate tags = default
+            case ABORT:
+                System.out.println(OStrings.getString("CONSOLE_VALIDATING_TAGS"));
+                stes = Core.getTagValidation().listInvalidTags();
+                if (!stes.isEmpty()) {
+                    Core.getTagValidation().logTagValidationErrors(stes);
+                    System.out.println(OStrings.getString("CONSOLE_TAGVALIDATION_FAIL"));
+                    System.out.println(OStrings.getString("CONSOLE_TAGVALIDATION_ABORT"));
+                    System.exit(1);
+                }
+                break;
+            case WARN:
+                System.out.println(OStrings.getString("CONSOLE_VALIDATING_TAGS"));
+                stes = Core.getTagValidation().listInvalidTags();
+                if (!stes.isEmpty()) {
+                    Core.getTagValidation().logTagValidationErrors(stes);
+                    System.out.println(OStrings.getString("CONSOLE_TAGVALIDATION_FAIL"));
+                }
+                break;
+            default:
+                // do not validate tags = default
         }
     }
 
@@ -588,7 +595,7 @@ public final class Main {
      * for the different console modes, to prevent code duplication.
      *
      * @param loadProject
-     *            load the project or not
+     *                    load the project or not
      * @return the project.
      */
     private static RealProject selectProjectConsoleMode(boolean loadProject) {
@@ -657,13 +664,13 @@ public final class Main {
             msg = ex.getMessage();
         }
         switch (runMode) {
-        case GUI:
-            JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), msg,
-                    OStrings.getString("STARTUP_ERRORBOX_TITLE"), JOptionPane.ERROR_MESSAGE);
-            break;
-        default:
-            System.err.println(MessageFormat.format(OStrings.getString("CONSOLE_ERROR"), msg));
-            break;
+            case GUI:
+                JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), msg,
+                        OStrings.getString("STARTUP_ERRORBOX_TITLE"), JOptionPane.ERROR_MESSAGE);
+                break;
+            default:
+                System.err.println(MessageFormat.format(OStrings.getString("CONSOLE_ERROR"), msg));
+                break;
         }
     }
 }

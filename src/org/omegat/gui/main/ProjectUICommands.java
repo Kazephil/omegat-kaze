@@ -404,7 +404,7 @@ public final class ProjectUICommands {
      * is false.
      *
      * @param projectDirectory
-     *            project directory or null if user must choose it
+     *                         project directory or null if user must choose it
      * @param closeCurrent
      *            whether to close the current project first, if any
      */
@@ -1157,6 +1157,22 @@ public final class ProjectUICommands {
         }.execute();
     }
 
+    public static void projectLast() {
+        List<String> projects = RecentProjects.getRecentProjects();
+    
+        try {
+            lastProject = new Fil    File lastProject = null;        
+e(projects.get(0));
+        } catch (Exception ex) {
+            Log.logErrorRB(ex, "TF_LOAD_RECENT_PROJECT_ERROR");
+            Core.getMainWindow().displayErrorRB(ex,
+                    "TF_LOAD_RECENT_PROJECT_ERROR");
+            return;
+        }
+
+        projectOpen(lastProject);
+    }
+
     /**
      * Open remote project specified by url.
      * 
@@ -1199,9 +1215,9 @@ public final class ProjectUICommands {
      * {@link #projectImportFiles(String, File[], boolean)}.
      *
      * @param destination
-     *            The path to copy the files to
+     *                    The path to copy the files to
      * @param toImport
-     *            Files to copy to destination path
+     *                    Files to copy to destination path
      */
     public static void projectImportFiles(String destination, File[] toImport) {
         projectImportFiles(destination, toImport, true);
@@ -1213,9 +1229,9 @@ public final class ProjectUICommands {
      * files would be overwritten.
      *
      * @param destination
-     *            The path to copy the files to
+     *                    The path to copy the files to
      * @param toImport
-     *            Files to copy to destination path
+     *                    Files to copy to destination path
      * @param doReload
      *            If true, the project will be reloaded after the files are
      *            successfully copied

@@ -49,6 +49,11 @@
 	  <keycombo><keycap>C</keycap><keycap>O</keycap></keycombo></term>
       <listitem>
         <para>Opens a previously created project.</para>
+		<para>
+		  <keycombo>
+			<keycap>C</keycap><keycap>o</keycap>
+		  </keycombo>
+		</para>
       </listitem>
     </varlistentry>
 
@@ -209,6 +214,7 @@
 	  <!-- TODO add link to a format description -->
       <listitem>
         <para>Converts the current project into a MED package.</para>
+		<para><emphasis>No default key shortcut</emphasis></para>
       </listitem>
     </varlistentry>
 

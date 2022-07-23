@@ -28,6 +28,11 @@
       <listitem>
         <para>Moves to the next segment with no target language entry in the
         translation memory.</para>
+		<para>
+		  <keycombo>
+			<keycap>C</keycap><keycap>u</keycap>
+		  </keycombo>
+		</para>
       </listitem>
     </varlistentry>
 
@@ -39,6 +44,11 @@
       <listitem>
         <para>Moves to the next already translated segment, ignoring
         untranslated segments.</para>
+		<para>
+		  <keycombo>
+			<keycap>S</keycap><keycap>C</keycap><keycap>u</keycap>
+		  </keycombo>
+		</para>
       </listitem>
     </varlistentry>
 
@@ -76,6 +86,16 @@
         <para>Moves to the previous segment, or to the last segment of the
         previous file if the current segment is the first one in the
         file.</para>
+		<para>
+		  <keycombo>
+			<keycap>C</keycap><keycap>p</keycap>
+		  </keycombo>
+		</para>
+		<para>
+		  <keycombo>
+			<keycap>C</keycap><keycap>Enter</keycap>
+		  </keycombo>
+		</para>
 
         <note>
 		  <para>You can use <keycombo><keycap>C</keycap><keycap>TAB</keycap></keycombo>
@@ -131,6 +151,12 @@
       <listitem>
         <para>Moves to the segment that corresponds to the currently
         selected match in the <guilabel>Fuzzy matches</guilabel> pane.</para>
+		<para>
+		  <keycombo>
+			<keycap>S</keycap><keycap>C</keycap><keycap>m</keycap>
+		  </keycombo>
+		</para>
+
       </listitem>
     </varlistentry>
 

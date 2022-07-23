@@ -72,6 +72,7 @@
         marking has priority over <guimenuitem>Highlight Translated
         Segments</guimenuitem> and <guimenuitem>Highlight Untranslated
         Segments</guimenuitem>.</para>
+		<para><emphasis>No default key shortcut</emphasis></para>
       </listitem>
     </varlistentry>
 
@@ -81,6 +82,7 @@
       <listitem>
         <para>If checked, non-breakable spaces are displayed with a gray
         background.</para>
+		<para><emphasis>No default key shortcut</emphasis></para>
       </listitem>
     </varlistentry>
 
@@ -90,6 +92,7 @@
       <listitem>
         <para>If checked, white spaces are displayed as a small
         dot.</para>
+		<para><emphasis>No default key shortcut</emphasis></para>
       </listitem>
     </varlistentry>
 

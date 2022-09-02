@@ -4,6 +4,7 @@
 <section id="windows.aligner">
   <title id="windows.aligner.title"><guilabel>Align Files</guilabel></title>
 
+<<<<<<< HEAD
   <para>Use <link endterm="menus.tools.title"
   linkend="menus.tools"/><link endterm="menus.tools.align.files.title"
   linkend="menus.tools.align.files"/> to access this tool.</para>
@@ -335,6 +336,127 @@
       often or work on large documents, as they allow you to carry out actions
       very quickly.</para>
     </note>
+=======
+  <para>Alignment is the process of creating a bilingual translation memory
+  from a pair of already translated monolingual documents. It is a two-step
+  process. First, the files are read by the aligner, which attempts to match
+  the corresponding segments from the source and translated texts. The
+  translator then reviews the results and makes any necessary manual
+  adjustments.</para>
+
+  <para>The aligner can read all the file formats supported by OmegaT. Select
+  <link endterm="menus.tools.align.files.title"
+  linkend="menus.tools.align.files"/> in the <link endterm="menus.tools.title"
+  linkend="menus.tools"/> menu to access this tool. This brings up the
+  <guilabel>Align Files</guilabel> dialog, where you specify the source and
+  target languages and select the two files you want to align.</para>
+
+  <tip>
+    <para>If you have a translation project open, the aligner will
+    automatically use the languages from that project, as well the
+    project-specific segmentation rules, if any.</para>
+  </tip>
+
+  <para>Clicking the <guibutton>OK</guibutton> button in the <guilabel>Align
+  Files</guilabel> dialog brings up the <guilabel>Align</guilabel> window with
+  the results of the automatic alignment.</para>
+
+  <para>The main part of the window is divided into three columns:
+  <itemizedlist>
+      <listitem>
+        <para><guilabel>Keep</guilabel>: The ticked check boxes mark the rows
+        whose segments will be saved to the translation memory file.</para>
+      </listitem>
+
+      <listitem>
+        <para><guilabel>Source</guilabel>: The segments from the original
+        text.</para>
+      </listitem>
+
+      <listitem>
+        <para><guilabel>Target</guilabel>: The segments from the translated
+        text.</para>
+      </listitem>
+    </itemizedlist></para>
+
+  <section id="windows.aligner.adjust">
+    <title id="windows.aligner.adjust.title">Step 1: Adjust alignment
+    parameters</title>
+
+    <para>In this step, the bottom part of the window presents various
+    parameters and options you can change if the initial alignment looks like
+    it could be improved. The alignment is recalculated immediately when you
+    change one of the parameters. As a rule of thumb, a lower
+    <guilabel>Average score</guilabel> after changing the parameters indicates
+    a more accurate alignment. The available parameters and options
+    are:</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>Parameters</term>
+
+        <listitem>
+          <para><guilabel>Comparison mode:</guilabel> </para>
+
+          <para><guilabel>Algorithm:</guilabel> </para>
+
+          <para><guilabel>Calculator:</guilabel> </para>
+
+          <para><guilabel>Counter:</guilabel> </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Options</term>
+
+        <listitem>
+          <para><guilabel>Segment</guilabel> </para>
+
+          <para><guilabel>Remove Tags</guilabel> </para>
+
+          <para><guilabel>Highlight</guilabel> </para>
+
+          <para><guibutton>Rules...</guibutton> </para>
+
+          <para><guibutton>Filters...</guibutton> </para>
+
+          <para><guibutton>Pattern...</guibutton> </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>In <guilabel>Heapwise</guilabel> comparison mode, the documents are
+    evaluated globally. Conversely, with <guilabel>Parsewise</guilabel>
+    comparison, they are evaluated segment by segment. This option is only
+    shown when such a selection is possible.</para>
+
+    <para>Use the <guilabel>ID</guilabel> comparison mode to align documents
+    consisting of key=value entries. This works even when the keys are not in
+    the same order in each file, and when the two files contain a different
+    number of entries. This option is only available if both selected files
+    are recognized as key=value files.</para>
+
+    <para>The <guilabel>Viterbi</guilabel> and
+    <guilabel>Forward-Backward</guilabel> algorithms are two different
+    calculation methods. You can try both and choose the one that provides the
+    best results.</para>
+
+    <para>Click <guibutton>Continue</guibutton> to proceed to the next
+    step.</para>
+  </section>
+
+  <section id="windows.aligner.manual.corrections">
+    <title id="windows.aligner.manual.corrections.title">Step 2: Make manual
+    corrections</title>
+
+    <para>Manual adjustments are generally required after the initial
+    automatic alignment process.</para>
+
+    <para>The manual step window presents the original and translated text in
+    the source and target columns, respectively.</para>
+
+    <para>To align a source and target segment found in different rows:</para>
+>>>>>>> 0facb8975 (First draft of Aligner section revisions.)
 
     <para>To perform an action, select the applicable segment or block of
     consecutive segments. Individual segments can be selected with the mouse or
@@ -342,6 +464,7 @@
     the first segment, and holding the <keycap>Shift</keycap> key while clicking
     the last segment.</para>
 
+<<<<<<< HEAD
 	<para>Alternatively, you can press the arrow keys while holding
 	<keycap>Shift</keycap> to select consecutive segments. The available actions
 	are presented below.</para>
@@ -524,5 +647,37 @@
       step.</para>
     </warning>    
     
+=======
+      <listitem>
+        <para>Press the space bar (a shortcut for <menuchoice>
+            <guimenu>Edit</guimenu>
+
+            <guimenuitem>Start Pinpoint Align</guimenuitem>
+          </menuchoice>).</para>
+      </listitem>
+
+      <listitem>
+        <para>Click on the corresponding segment in the other column.</para>
+      </listitem>
+    </orderedlist>
+
+    <para>After repeating the process a few times, press <keycombo><keycap>C</keycap><keycap>r</keycap></keycombo> (or select
+    <menuchoice>
+        <guimenu>Edit</guimenu>
+
+        <guimenuitem>Realign pending</guimenuitem>
+      </menuchoice> )to update the alignment of the remaining segments.</para>
+
+    <para>To move one or more segments individually, select them and press
+    <userinput>U</userinput> or <userinput>D</userinput> (or click the
+    <guilabel>Move Up</guilabel> or <guilabel>Move Down</guilabel>
+    button).</para>
+
+    <para>Only rows with the <guilabel>Keep</guilabel> box ticked in the first
+    column are saved to the translation memory.</para>
+
+    <para>After you finish aligning the two columns, click <guibutton>Save
+    TMX...</guibutton> to create the translation memory.</para>
+>>>>>>> 0facb8975 (First draft of Aligner section revisions.)
   </section>
 </section>

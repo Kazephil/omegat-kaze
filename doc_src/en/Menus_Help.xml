@@ -19,9 +19,7 @@
       <term
       id="menus.help.about.title"><guimenuitem>About...</guimenuitem></term>
       <listitem>
-        <para>Displays copyright, credits and license information.</para>
-		<para><emphasis>No default key shortcut</emphasis></para>
-      </listitem>
+        <para>Displays copyright, credits and license information.</para>      </listitem>
     </varlistentry>
 
     <varlistentry id="menus.help.last.changes">

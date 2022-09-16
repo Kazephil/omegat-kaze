@@ -28,11 +28,6 @@
       <listitem>
         <para>Moves to the next segment with no target language entry in the
         translation memory.</para>
-		<para>
-		  <keycombo>
-			<keycap>C</keycap><keycap>u</keycap>
-		  </keycombo>
-		</para>
       </listitem>
     </varlistentry>
 
@@ -44,11 +39,6 @@
       <listitem>
         <para>Moves to the next already translated segment, ignoring
         untranslated segments.</para>
-		<para>
-		  <keycombo>
-			<keycap>S</keycap><keycap>C</keycap><keycap>u</keycap>
-		  </keycombo>
-		</para>
       </listitem>
     </varlistentry>
 

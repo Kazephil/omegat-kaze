@@ -1,3 +1,21 @@
+build
+
+# Gradle
+.gradle
+.settings
+.project
+.classpath
+bin
+.nb-gradle
+local.properties
+
+.idea
+
+# Docs
+.fop
+
+# emacs backup files
+*~
 
 # MacOS system file
 .DS_Store

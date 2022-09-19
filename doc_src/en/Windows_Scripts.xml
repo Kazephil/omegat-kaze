@@ -160,7 +160,8 @@
         standard tags</term>
 
         <listitem>
-          <para>Adapt standard tags when the Replace with Match command invoked.</para>
+          <para>Adapt standard tags when the Replace with Match command
+          invoked.</para>
         </listitem>
       </varlistentry>
 
@@ -270,7 +271,8 @@
         space</term>
 
         <listitem>
-          <para>Replace spaces with non-breakable spaces where appropriate in French.</para>
+          <para>Replace spaces with non-breakable spaces where appropriate in
+          French.</para>
         </listitem>
       </varlistentry>
 
@@ -351,7 +353,8 @@
         Same Segments</term>
 
         <listitem>
-          <para>Display a list of segments where the source and target have identical content.</para>
+          <para>Display a list of segments where the source and target have
+          identical content.</para>
         </listitem>
       </varlistentry>
 

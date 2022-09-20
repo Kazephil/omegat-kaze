@@ -80,8 +80,9 @@
 		  <keycombo>
 			<keycap>C</keycap><keycap>P</keycap>
 		  </keycombo>
-		</para>
-		<para>
+</term>
+      <listitem>
+		<para>Also:
 		  <keycombo>
 			<keycap>C</keycap><keycap>Enter</keycap>
 		  </keycombo>

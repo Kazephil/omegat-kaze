@@ -27,6 +27,9 @@
 	# Country
 	-Duser.country=CA</programlisting>
 
+	<para>You can also click on <filename>OmegaT.jar</filename> to launch it
+	directly if the <filename>.jar</filename> extension is associated to the
+	system Java launcher.</para>
 
 	<para>Advice: if OmegaT works slowly in Remote Desktop sessions under
 	Windows, you may use this option:</para>

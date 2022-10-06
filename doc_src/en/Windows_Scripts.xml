@@ -167,7 +167,7 @@
 
       <varlistentry id="windows.scripts.distribution.auto.open.last.project">
         <term
-        id="windows.scripts.distribution.auto.open.last.project.title">Auto Open
+			id="windows.scripts.distribution.auto.open.last.project.title">Auto Open
         Last Project</term>
 
         <listitem>
@@ -186,7 +186,7 @@
 
       <varlistentry id="windows.scripts.distribution.currency.translator">
         <term
-        id="windows.scripts.distribution.currency.translator.title">Currency
+			id="windows.scripts.distribution.currency.translator.title">Currency
         Translator</term>
 
         <listitem>
@@ -200,7 +200,7 @@
 
       <varlistentry id="windows.scripts.distribution.example.gui.scripting">
         <term
-        id="windows.scripts.distribution.example.gui.scripting.title">Example -
+			id="windows.scripts.distribution.example.gui.scripting.title">Example -
         GUI Scripting</term>
 
         <listitem>
@@ -210,7 +210,7 @@
 
       <varlistentry id="windows.scripts.distribution.example.key.binding">
         <term
-        id="windows.scripts.distribution.example.key.binding.title">Example -
+			id="windows.scripts.distribution.example.key.binding.title">Example -
         Key Binding</term>
 
         <listitem>
@@ -220,7 +220,7 @@
 
       <varlistentry id="windows.scripts.distribution.example.modify.segment">
         <term
-        id="windows.scripts.distribution.example.modify.segment.title">Example -
+			id="windows.scripts.distribution.example.modify.segment.title">Example -
         Modify Segment</term>
 
         <listitem>
@@ -230,7 +230,7 @@
 
       <varlistentry id="windows.scripts.distribution.example.search.and.replace">
         <term
-        id="windows.scripts.distribution.example.search.and.replace.title">Example
+			id="windows.scripts.distribution.example.search.and.replace.title">Example
         - Search and Replace</term>
 
         <listitem>
@@ -240,7 +240,7 @@
 
       <varlistentry id="windows.scripts.distribution.external.spellcheck">
         <term
-        id="windows.scripts.distribution.external.spellcheck.title">External
+			id="windows.scripts.distribution.external.spellcheck.title">External
         spellcheck</term>
 
         <listitem>
@@ -254,7 +254,7 @@
 
       <varlistentry id="windows.scripts.distribution.extract.text.content">
         <term
-        id="windows.scripts.distribution.extract.text.content.title">Extract
+			id="windows.scripts.distribution.extract.text.content.title">Extract
         Text Content</term>
 
         <listitem>
@@ -267,7 +267,7 @@
 
       <varlistentry id="windows.scripts.distribution.non.breaking.space">
         <term
-        id="windows.scripts.distribution.non.breaking.space.title">Non-breaking
+			id="windows.scripts.distribution.non.breaking.space.title">Non-breaking
         space</term>
 
         <listitem>
@@ -360,7 +360,7 @@
 
       <varlistentry id="windows.scripts.distribution.spellcheck">
         <term
-        id="windows.scripts.distribution.spellcheck.title">Spellcheck</term>
+			id="windows.scripts.distribution.spellcheck.title">Spellcheck</term>
 
         <listitem>
           <para>Global spell checking.</para>
@@ -413,7 +413,7 @@
 
       <varlistentry id="windows.scripts.distribution.issue.provider.sample.groovy">
         <term
-        id="windows.scripts.distribution.issue.provider.sample.groovy.title">issue_provider_sample.groovy</term>
+			id="windows.scripts.distribution.issue.provider.sample.groovy.title">issue_provider_sample.groovy</term>
 
         <listitem>
           <para>(no description)</para>

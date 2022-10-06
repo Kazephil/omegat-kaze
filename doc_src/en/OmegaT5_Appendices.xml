@@ -13,7 +13,7 @@
   <xi:include href="App_Glossaries.xml"
               xmlns:xi="http://www.w3.org/2001/XInclude"/>
 
-  <xi:include href="App_Dictionaries.xml"
+  <xi:include href="App_ShortCuts.xml"
               xmlns:xi="http://www.w3.org/2001/XInclude"/>
 
   <xi:include href="App_FileFilters.xml"

@@ -319,6 +319,8 @@ public class MainWindowMenu implements ActionListener, MenuListener, IMainMenu {
         editMenu.addSeparator();
         editMenu.add(editOverwriteMachineTranslationMenuItem = createMenuItem("TF_MENU_EDIT_OVERWRITE_MACHITE_TRANSLATION"));
         editMenu.addSeparator();
+        editMenu.add(editOverwriteMachineTranslationMenuItem = createMenuItem("TF_MENU_EDIT_OVERWRITE_MACHITE_TRANSLATION"));
+        editMenu.addSeparator();
         editMenu.add(editTagPainterMenuItem = createMenuItem("TF_MENU_EDIT_TAGPAINT"));
         editMenu.add(editTagNextMissedMenuItem = createMenuItem("TF_MENU_EDIT_TAG_NEXT_MISSED"));
         editMenu.addSeparator();

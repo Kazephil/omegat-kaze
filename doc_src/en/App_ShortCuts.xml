@@ -508,7 +508,7 @@
 
             <row>
               <entry>Access Project Contents/Writable Glossary</entry>
-              <entry>projectAccessWriteableGlossaryMenuItem</entry>
+              <entry>projectAccessWritableGlossaryMenuItem</entry>
             </row>
 
             <row>
@@ -773,12 +773,12 @@
             </row>
 
             <row>
-              <entry>Remove translation</entry>
+              <entry>Remove Translation</entry>
               <entry>editRegisterUntranslatedMenuItem</entry>
             </row>
 
             <row>
-              <entry>Set empty translation</entry>
+              <entry>Set Empty Translation</entry>
               <entry>editRegisterEmptyMenuItem</entry>
             </row>
 
@@ -1206,7 +1206,7 @@
 
           <tbody>
             <row>
-              <entry>User Guide...</entry>
+              <entry>User Manual...</entry>
               <entry>helpContentsMenuItem</entry>
               <entry namest="3" nameend="4">F1</entry>
             </row>

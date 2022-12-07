@@ -1981,6 +1981,7 @@ public class EditorController implements IEditor {
                     .setComponentOrientation(Language.isRTL(language) ? ComponentOrientation.RIGHT_TO_LEFT
                             : ComponentOrientation.LEFT_TO_RIGHT);
             introPane.setEditable(false);
+            introPane.setFont(mw.getApplicationFont());
             DragTargetOverlay.apply(introPane, dropInfo);
             URI uri = Help.getHelpFileURI(language, OConsts.HELP_INSTANT_START);
             if (uri != null) {

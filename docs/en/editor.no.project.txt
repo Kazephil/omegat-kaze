@@ -1,0 +1,5 @@
+The core of OmegaT, this is where you enter and revise your translations.
+Refer to the manual for information on the various functions available in the
+Editor pane.
+
+Press F1 or select "User Guide..." in the Help menu to view the manual.

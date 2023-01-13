@@ -47,9 +47,9 @@
       <term id="menus.view.display.source.segments.title"><guimenuitem>Display
       Source Segments</guimenuitem></term>
       <listitem>
-        <para>If checked, all the source segments are shown and highlighted
-        in green.  If not checked, only the current source segments is
-        shown.</para>
+        <para>If checked, all source segments are shown and marked in
+        green.  Otherwise, only the current source segment is shown.
+        </para>
       </listitem>
     </varlistentry>
 

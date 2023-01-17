@@ -1157,16 +1157,16 @@ public final class ProjectUICommands {
         }.execute();
     }
 
+    // Follow the same model as 'projectRemote'
     public static void projectLast() {
         List<String> projects = RecentProjects.getRecentProjects();
-    
+        File lastProject = null;
+
         try {
-            lastProject = new Fil    File lastProject = null;        
-e(projects.get(0));
+            lastProject = new File(projects.get(0));
         } catch (Exception ex) {
             Log.logErrorRB(ex, "TF_LOAD_RECENT_PROJECT_ERROR");
-            Core.getMainWindow().displayErrorRB(ex,
-                    "TF_LOAD_RECENT_PROJECT_ERROR");
+            Core.getMainWindow().displayErrorRB(ex, "TF_LOAD_RECENT_PROJECT_ERROR");
             return;
         }
 

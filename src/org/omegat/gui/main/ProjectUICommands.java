@@ -1157,6 +1157,22 @@ public final class ProjectUICommands {
         }.execute();
     }
 
+    // Retrieve and open the most recent project
+    public static void projectLast() {
+        List<String> projects = RecentProjects.getRecentProjects();
+        File lastProject = null;
+
+        try {
+            lastProject = new File(projects.get(0));
+        } catch (Exception ex) {
+            Log.logErrorRB(ex, "TF_LOAD_RECENT_PROJECT_ERROR");
+            Core.getMainWindow().displayErrorRB(ex, "TF_LOAD_RECENT_PROJECT_ERROR");
+            return;
+        }
+
+        projectOpen(lastProject);
+    }
+
     /**
      * Open remote project specified by url.
      * 

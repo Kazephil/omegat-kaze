@@ -62,6 +62,11 @@ public final class CLIParameters {
     public static final String PROJECT_DIR = "project";
 
     /**
+     * CLI parameter to specify that the most recent project should be loaded
+     */
+    public static final String LAST_PROJECT = "last-project";
+    
+    /**
      * CLI parameter to specify a remote project to load instead of a local one
      */
     public static final String REMOTE_PROJECT = "remote-project";

@@ -125,6 +125,9 @@ public final class Main {
     /** Project location for load on startup. */
     protected static File projectLocation = null;
 
+    /**Whether to load the most recent project on startup. */
+    protected static boolean loadLastProject = false;
+
     /** Remote project location. */
     protected static String remoteProject = null;
 
@@ -156,6 +159,9 @@ public final class Main {
         if (projectDir != null) {
             projectLocation = new File(FileUtil.expandTildeHomeDir(projectDir));
         }
+
+        // Set the runtime 'loadLastProject' key value
+        loadLastProject = PARAMS.containsKey(CLIParameters.LAST_PROJECT);
         remoteProject = PARAMS.get(CLIParameters.REMOTE_PROJECT);
 
         applyConfigFile(PARAMS.get(CLIParameters.CONFIG_FILE));
@@ -377,7 +383,14 @@ public final class Main {
             // call all application startup listeners for initialize UI
             Core.getMainWindow().getApplicationFrame().setVisible(true);
 
-            if (remoteProject != null) {
+            /*
+             * Make sure no other project has been specified, and assign
+             * the last project to 'projectLocation' if the option
+             * has been invoked.
+             */
+            if (loadLastProject == true) {
+                ProjectUICommands.projectLast();
+            } else if (remoteProject != null) {
                 ProjectUICommands.projectRemote(remoteProject);
             } else if (projectLocation != null) {
                 ProjectUICommands.projectOpen(projectLocation);

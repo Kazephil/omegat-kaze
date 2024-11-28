@@ -4,7 +4,7 @@
           glossaries, and translation leveraging into updated projects.
 
  Copyright (C) 2000-2006 Keith Godfrey, Maxym Mykhalchuk, Henry Pijffers,
-                         Benjamin Siband, and Kim Bruning
+               2000-2006 Benjamin Siband, and Kim Bruning
                2007 Zoltan Bartko
                2008 Andrzej Sawula, Alex Buloichik
                2009 Didier Briel
@@ -108,7 +108,7 @@ import org.omegat.gui.editor.mark.Mark;
 import org.omegat.gui.main.BaseMainWindowMenu;
 import org.omegat.gui.main.DockablePanel;
 import org.omegat.gui.main.IMainMenu;
-import org.omegat.gui.main.MainWindow;
+import org.omegat.gui.main.IMainWindow;
 import org.omegat.gui.main.MainWindowStatusBar;
 import org.omegat.gui.main.ProjectUICommands;
 import org.omegat.gui.notes.INotes;
@@ -183,7 +183,7 @@ public class EditorController implements IEditor {
     private String emptyProjectPaneTitle;
     private JTextPane introPane;
     private JTextPane emptyProjectPane;
-    protected final MainWindow mw;
+    protected final IMainWindow mw;
 
     /** Currently displayed segments info. */
     protected SegmentBuilder[] m_docSegList;
@@ -229,7 +229,7 @@ public class EditorController implements IEditor {
      */
     private IProject.AllTranslations previousTranslations;
 
-    public EditorController(final MainWindow mainWindow) {
+    public EditorController(final IMainWindow mainWindow) {
         this.mw = mainWindow;
 
         segmentExportImport = new SegmentExportImport(this);
@@ -373,7 +373,7 @@ public class EditorController implements IEditor {
         scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.getVerticalScrollBar().addAdjustmentListener(scrollListener);
-
+        scrollPane.setName("EditorScrollPane");
         pane.setLayout(new BorderLayout());
         pane.add(scrollPane, BorderLayout.CENTER);
 
@@ -2144,6 +2144,35 @@ public class EditorController implements IEditor {
     @Override
     public void windowDeactivated() {
         editor.autoCompleter.setVisible(false);
+    }
+
+    @Override
+    public CaretPosition getCurrentPositionInEntryTranslationInEditor() {
+        int selectionEnd = getCurrentPositionInEntryTranslation();
+        String selection = getSelectedText();
+        String translation = getCurrentTranslation();
+
+        if (StringUtil.isEmpty(translation) || StringUtil.isEmpty(selection)) {
+            // no translation or no selection
+            return new CaretPosition(selectionEnd);
+        } else {
+            // get selected range
+            int selectionStart = selectionEnd;
+            int pos = 0;
+            do {
+                pos = translation.indexOf(selection, pos);
+                if (pos == selectionEnd) {
+                    selectionStart = pos;
+                    selectionEnd = pos + selection.length();
+                    break;
+                } else if ((pos + selection.length()) == selectionEnd) {
+                    selectionStart = pos;
+                    break;
+                }
+                pos++;
+            } while (pos > 0);
+            return new CaretPosition(selectionStart, selectionEnd);
+        }
     }
 
     /**

@@ -3,7 +3,10 @@
           with fuzzy matching, translation memory, keyword search,
           glossaries, and translation leveraging into updated projects.
 
- Copyright (C) 2025 Hiroshi Miura
+ Copyright (C) 2011 Briac Pilpre (briacp@gmail.com)
+               2013 Alex Buloichik
+               2014 Briac Pilpre (briacp@gmail.com), Yu Tang
+               2015 Yu Tang, Aaron Madlon-Kay
                Home page: https://www.omegat.org/
                Support center: https://omegat.org/support
 
@@ -22,59 +25,21 @@
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  **************************************************************************/
-package org.omegat.gui.main;
+package org.omegat.gui.scripting.ui;
 
-import org.omegat.util.gui.MenuExtender;
+import org.omegat.gui.scripting.ScriptingWindow;
 
-import javax.swing.JMenu;
+import java.awt.Component;
 
-public class MainMenuStub implements IMainMenu {
+import javax.swing.JMenuBar;
+import javax.swing.JTextArea;
 
-    @Override
-    public JMenu getToolsMenu() {
-        return null;
-    }
-
-    @Override
-    public JMenu getProjectMenu() {
-        return null;
-    }
-
-    @Override
-    public JMenu getOptionsMenu() {
-        return null;
-    }
-
-    @Override
-    public JMenu getMachineTranslationMenu() {
-        return null;
-    }
-
-    @Override
-    public JMenu getGlossaryMenu() {
-        return null;
-    }
-
-    @Override
-    public JMenu getAutoCompletionMenu() {
-        return null;
-    }
-
-    @Override
-    public JMenu getHelpMenu() {
-        return null;
-    }
-
-    @Override
-    public JMenu getMenu(final MenuExtender.MenuKey marker) {
-        return null;
-    }
-
-    private JMenu getGotoMenu() {
-        return null;
-    }
-
-    @Override
-    public void invokeAction(String action, int modifiers) {
-    }
+@SuppressWarnings("serial")
+public abstract class AbstractScriptEditor extends JTextArea {
+    public abstract void setHighlighting(String extension);
+    public abstract void enhanceMenu(JMenuBar mb);
+    public abstract void initLayout(ScriptingWindow scriptingWindow);
+    public abstract Component getPanel();
+    // XXX setText(String s) does not seem to work directly on the subclasses ?
+    public abstract JTextArea getTextArea();
 }

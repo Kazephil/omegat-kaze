@@ -22,59 +22,31 @@
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  **************************************************************************/
-package org.omegat.gui.main;
 
-import org.omegat.util.gui.MenuExtender;
+package org.omegat.gui.exttrans;
 
-import javax.swing.JMenu;
+import org.junit.Test;
+import org.omegat.core.data.TestCoreState;
+import org.omegat.gui.main.TestCoreGUI;
+import org.omegat.machinetranslators.dummy.DummyMachineTranslator;
 
-public class MainMenuStub implements IMainMenu {
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
-    @Override
-    public JMenu getToolsMenu() {
-        return null;
-    }
+import static org.junit.Assert.assertEquals;
 
-    @Override
-    public JMenu getProjectMenu() {
-        return null;
-    }
+public class MachineTranslateTest extends TestCoreGUI {
 
-    @Override
-    public JMenu getOptionsMenu() {
-        return null;
-    }
+    private static final Path PROJECT_PATH = Paths.get("test-acceptance/data/project/");
 
-    @Override
-    public JMenu getMachineTranslationMenu() {
-        return null;
-    }
-
-    @Override
-    public JMenu getGlossaryMenu() {
-        return null;
-    }
-
-    @Override
-    public JMenu getAutoCompletionMenu() {
-        return null;
-    }
-
-    @Override
-    public JMenu getHelpMenu() {
-        return null;
-    }
-
-    @Override
-    public JMenu getMenu(final MenuExtender.MenuKey marker) {
-        return null;
-    }
-
-    private JMenu getGotoMenu() {
-        return null;
-    }
-
-    @Override
-    public void invokeAction(String action, int modifiers) {
+    @Test
+    public void testMachineTranslation() throws Exception {
+        // load project
+        openSampleProject(PROJECT_PATH);
+        robot().waitForIdle();
+        //
+        MachineTranslateTextArea machineTranslateTextArea = TestCoreState.getInstance().getMachineTranslatePane();
+        assertEquals(DummyMachineTranslator.ENGINE_NAME, machineTranslateTextArea.getDisplayedTranslation().translatorName);
+        assertEquals(DummyMachineTranslator.TRANSLATION, machineTranslateTextArea.getDisplayedTranslation().result);
     }
 }

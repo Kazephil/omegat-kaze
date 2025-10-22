@@ -3,7 +3,8 @@
           with fuzzy matching, translation memory, keyword search,
           glossaries, and translation leveraging into updated projects.
 
- Copyright (C) 2025 Hiroshi Miura
+ Copyright (C) 2015 Aaron Madlon-Kay
+               2025 Hiroshi Miura
                Home page: https://www.omegat.org/
                Support center: https://omegat.org/support
 
@@ -22,59 +23,32 @@
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  **************************************************************************/
-package org.omegat.gui.main;
 
-import org.omegat.util.gui.MenuExtender;
 
-import javax.swing.JMenu;
+package org.omegat.gui.scripting.runner;
 
-public class MainMenuStub implements IMainMenu {
+import javax.script.Bindings;
+import javax.script.Invocable;
+import javax.script.ScriptContext;
+import javax.script.ScriptEngine;
+import javax.script.ScriptException;
+import java.util.Map;
 
-    @Override
-    public JMenu getToolsMenu() {
-        return null;
-    }
-
-    @Override
-    public JMenu getProjectMenu() {
-        return null;
-    }
+public class StandardScriptRunner extends AbstractScriptRunner {
 
     @Override
-    public JMenu getOptionsMenu() {
-        return null;
-    }
+    protected Object doExecuteScript(String script, ScriptEngine engine,
+                                     Map<String, Object> additionalBindings) throws ScriptException {
 
-    @Override
-    public JMenu getMachineTranslationMenu() {
-        return null;
-    }
+        Bindings bindings = setupBindings(engine, additionalBindings);
+        engine.setBindings(bindings, ScriptContext.ENGINE_SCOPE);
 
-    @Override
-    public JMenu getGlossaryMenu() {
-        return null;
-    }
+        Object result = engine.eval(script);
 
-    @Override
-    public JMenu getAutoCompletionMenu() {
-        return null;
-    }
+        if (engine instanceof Invocable) {
+            invokeGuiScript((Invocable) engine);
+        }
 
-    @Override
-    public JMenu getHelpMenu() {
-        return null;
-    }
-
-    @Override
-    public JMenu getMenu(final MenuExtender.MenuKey marker) {
-        return null;
-    }
-
-    private JMenu getGotoMenu() {
-        return null;
-    }
-
-    @Override
-    public void invokeAction(String action, int modifiers) {
+        return result;
     }
 }

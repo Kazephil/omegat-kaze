@@ -48,7 +48,7 @@ dependencies {
     // 3rd party gradle plugin
     implementation 'com.github.ben-manes:gradle-versions-plugin:0.52.0'
     implementation 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.1.5'
-    implementation 'com.diffplug.spotless:spotless-plugin-gradle:8.4.0'
+    implementation 'com.diffplug.spotless:spotless-plugin-gradle:8.6.0'
     implementation 'edu.sc.seis.launch4j:launch4j:4.0.0'
     implementation 'org.hidetake.ssh:org.hidetake.ssh.gradle.plugin:2.11.2'
     implementation 'net.ltgt.gradle:gradle-errorprone-plugin:4.2.0'
@@ -57,7 +57,7 @@ dependencies {
     // dependencies on Maven
     implementation 'xerces:xercesImpl:2.12.2'
     implementation 'xml-resolver:xml-resolver:1.2'
-    implementation 'org.xmlresolver:xmlresolver:5.2.2'
+    implementation 'org.xmlresolver:xmlresolver:6.0.23'
     implementation 'net.sf.saxon:Saxon-HE:12.9'
     implementation 'org.docbook:docbook-xslTNG:2.7.6'
     implementation 'com.nwalsh:sinclude:5.2.4'

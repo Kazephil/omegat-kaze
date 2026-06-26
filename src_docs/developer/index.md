@@ -44,6 +44,7 @@
 * [Integration test](34.IntegrationTest.md)
 * [Build and dependency security](37.BuildAndDependencySecurity.md)
 * [Test a specific feature](35.SpecificFeatureTests.md)
+* [Continuous Integration and Continuous Delivery](96.ContinuousIntegration.md)
 
 ## Documentation
 
@@ -81,6 +82,7 @@
 
 ## Other information
 
+* [Offline Build](09.OfflineBuild.md)
 * [Release procedure](90.ReleaseProcedure.md)
 * [Code Signing How-to](92.CodeSigning.md)
 * [Building installer](93.BuildingInstallerPackage.md)
